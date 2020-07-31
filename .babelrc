@@ -1,0 +1,69 @@
+{
+  "presets": [
+    "@babel/react",
+    "@babel/env"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-optional-chaining"
+    ],
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "alias": {
+          "src": "./src",
+          "components": "./src/components/",
+          "connection": "./src/connection",
+          "forms": "./src/forms/",
+          "locales": "./src/locales",
+          "pages": "./src/pages/",
+          "stores": "./src/stores/",
+          "config": "./src/config",
+          "theme": "./src/theme",
+          "utils": "./src/utils/",
+          "types": "./src/types",
+          "fonts": "./src/components/assets/fonts",
+          "icons": "./src/components/assets/icons",
+          "images": "./src/components/assets/images"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "babel-plugin-styled-components",
+          {
+            "displayName": true
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        [
+          "babel-plugin-styled-components",
+          {
+            "displayName": false
+          }
+        ]
+      ]
+    }
+  }
+}
